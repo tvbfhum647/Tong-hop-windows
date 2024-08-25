@@ -1,0 +1,22 @@
+name: Tailscale Ubuntu VNC - Docker
+
+on: 
+  workflow_dispatch:
+    inputs:
+      link_iso:
+        description: 'dán link iso của ae vô đây'
+        required: true
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chuẩn bị phần mềm
+        run: |
+          sudo apt update -y
+          sudo apt install wget curl -y
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up
+      - name: cài đặt ubuntu
+        run: |
+           docker run -p 5900:5900 dorowu/ubuntu-desktop-lxde-vnc

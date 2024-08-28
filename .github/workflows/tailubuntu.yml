@@ -15,4 +15,4 @@ jobs:
           sudo tailscale up
       - name: cài đặt ubuntu
         run: |
-           docker run -p 5900:5900 dorowu/ubuntu-desktop-lxde-vnc
+          docker run -p 3389:3389 dorowu/ubuntu-desktop-lxde-vnc

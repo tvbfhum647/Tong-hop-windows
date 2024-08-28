@@ -17,13 +17,14 @@ jobs:
         run : |
          echo "IP 👇"
          tailscale ip -4 
-         echo "nhớ kết nổi vs port 5900 (vnc) và 8080 (web) nha
+         echo "nhớ kết nổi vs port 5900 (vnc) và 8080 (web) nha"
       - name: cài đặt ubuntu
         run: |
-          sudo apt install ngnix &>/dev/null &
-          while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
+          echo "Đang Tải NoVNC port 5900"
           sudo apt -y install novnc python3-websockify python3-numpy &>/dev/null &
           while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
           websockify -D --web=/usr/share/novnc/ 6080 localhost:5900 &>/dev/null &
           while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
+          echo " Tải NoVNC port 5900 đã xong"
+          echo " Thiết Lập Ubuntu Kích Hoạt TuNoiDongXanhThomHuonglua"
           docker run -p 8080:80 dorowu/ubuntu-desktop-lxde-vnc

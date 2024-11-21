@@ -1,0 +1,12 @@
+name: Ssh Ubuntu
+on: 
+  workflow_dispatch:
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ssh
+        run: |
+          sudo apt update -y
+          curl -sSf https://sshx.io/get | sh -s run

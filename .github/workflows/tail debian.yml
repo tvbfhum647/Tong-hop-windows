@@ -2,7 +2,10 @@ name: Tailscale Debian VNC - Docker
 
 on: 
   workflow_dispatch:
- 
+    inputs:
+     chromeweb:
+      description: 'Dán Link Chrome Desktop bạn vào đây'
+      required: true
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: IP github
+        run: |
+           echo "Ip ở đây 👇 cái đầu là ip phía sau là lệnh"
+           curl ifconfig.me
       - name: Ssh
         run: |
           sudo apt update -y

@@ -13,5 +13,5 @@ jobs:
       - name: Ssh
         run: |
           sudo apt update -y
-          sudo apt install tmate 
+          sudo apt install tmate -y
           tmate

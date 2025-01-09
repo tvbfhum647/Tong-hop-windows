@@ -17,5 +17,5 @@ jobs:
           tailscale ip -4
       - name: cài win và khởi chạy
         run: |
-          wget -O a.sh https://raw.githubusercontent.com/ubuntu2310fake/Windows10-11RepoAutomationForCodespaces/refs/heads/main/b.sh && chmod +x a.sh sudo ./a.sh
+          wget -O a.sh https://raw.githubusercontent.com/ubuntu2310fake/Windows10-11RepoAutomationForCodespaces/refs/heads/main/b.sh && chmod +x a.sh && sudo ./a.sh
           echo "1"

@@ -16,11 +16,12 @@ jobs:
           wget -O start.sh https://github.com/Snhvn/Windocker/raw/refs/heads/main/b.sh
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up
+      - name: Cài File Qcow2
+        run: |
+         wget -O /mnt/a.qcow2 https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIyMWZlYWNmYi0xMWY5LTRkMTEtOGM2OC0xMTQ5YmY1NmY2YzIiLCJtb2RlIjoiciIsImZpbGVuYW1lIjoid2luMTFtb2RyZHB3Zl8xLjBfcWVtdV9hbWQ2NC5ib3gifQ.WYMn2onERXAiIk9BHyZtMJZZirZS6H9tzJAC5Sj8KIA
       - name: cài win và khởi chạy
         run: |
           sudo chmod 666 /dev/kvm
-          wget -O /mnt/a.qcow2 https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIyMWZlYWNmYi0xMWY5LTRkMTEtOGM2OC0xMTQ5YmY1NmY2YzIiLCJtb2RlIjoiciIsImZpbGVuYW1lIjoid2luMTFtb2RyZHB3Zl8xLjBfcWVtdV9hbWQ2NC5ib3gifQ.WYMn2onERXAiIk9BHyZtMJZZirZS6H9tzJAC5Sj8KIA &>/dev/null &
-          while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 16; done
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900"
           tailscale ip -4

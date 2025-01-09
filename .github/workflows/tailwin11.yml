@@ -1,0 +1,21 @@
+name: Tailscale Windows11
+
+on: 
+  workflow_dispatch:
+    
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chuẩn bị phần mềm
+        run: |
+          sudo apt update -y
+          sudo apt install wget curl -y
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up
+          tailscale ip -4
+      - name: cài win và khởi chạy
+        run: |
+          wget -O a.sh https://raw.githubusercontent.com/ubuntu2310fake/Windows10-11RepoAutomationForCodespaces/refs/heads/main/b.sh && chmod +x a.sh sudo ./a.sh
+          echo "1"

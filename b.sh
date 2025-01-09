@@ -17,5 +17,4 @@ sudo cpulimit -l 80 -- sudo kvm -daemonize \
     -uuid e47ddb84-fb4d-46f9-b531-14bb15156336 \
     -soundhw hda \
     -chardev spicevmc,id=vdagent,name=vdagent \
-    -device virtserialport,chardev=vdagent,name=com.redhat.spice.0 \
-    -spice port=5924,disable-ticketing
+    -device virtserialport,chardev=vdagent,name=com.redhat.spice.0

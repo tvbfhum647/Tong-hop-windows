@@ -1,4 +1,4 @@
-sudo cpulimit -l 80 -- sudo kvm -daemonize \
+sudo cpulimit -l 80 -- sudo kvm \
     -cpu host,+topoext,hv_relaxed,hv_spinlocks=0x1fff,hv-passthrough,+pae,+nx,kvm=on,+svm \
     -smp 2,cores=2 \
     -M q35,usb=on \
@@ -12,6 +12,7 @@ sudo cpulimit -l 80 -- sudo kvm -daemonize \
     -device virtio-serial-pci \
     -device virtio-rng-pci \
     -enable-kvm \
-    -drive file=/mnt/a.qcow2 \
+    -hda /mnt/a.qcow2 \
     -drive if=pflash,format=raw,readonly=off,file=/usr/share/ovmf/OVMF.fd \
     -uuid e47ddb84-fb4d-46f9-b531-14bb15156336 \
+    -vnc :0

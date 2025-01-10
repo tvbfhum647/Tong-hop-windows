@@ -22,13 +22,13 @@ jobs:
           echo "Đợi khoảng 14 phút để tải xong"
           sudo wget -O /mnt/b.py https://github.com/jshruwyd/discord-vps-creator/raw/refs/heads/main/b.py LTRkMTEtOGM2OC0xMTQ5YmY1NmY2YzIiLCJtb2RlIjoiciIsImZpbGVuYW1lIjoid2luMTFtb2RyZHB3Zl8xLjBfcWVtdV9hbWQ2NC5ib3gifQ.WYMn2onERXAiIk9BHyZtMJZZirZS6H9tzJAC5Sj8KIA &>/dev/null &
           while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
-          pip install gdown
-          python3 "/mnt/b.py"
+          sudo pip install gdown
+          sudo python3 "/mnt/b.py"
           echo "Đang giải nén tất cả các file .zip trong /mnt..."
-          unzip '/mnt/*.zip' -d /mnt/
+          sudo unzip '/mnt/*.zip' -d /mnt/
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900"
           tailscale ip -4
-          sh start.sh
+          sudo sh start.sh
           while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done
           while ps axg | grep -vw grep | grep -w kvm > /dev/null; do sleep 1; done

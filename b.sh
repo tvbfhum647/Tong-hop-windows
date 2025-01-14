@@ -1,9 +1,9 @@
 sudo cpulimit -l 80 -- sudo kvm \
     -cpu host,+topoext,hv_relaxed,hv_spinlocks=0x1fff,hv-passthrough,+pae,+nx,kvm=on,+svm \
-    -smp 2,cores=2 \
+    -smp 4,cores=4 \
     -M q35,usb=on \
     -device usb-tablet \
-    -m 8G \
+    -m 12G \
     -device virtio-balloon-pci \
     -vga virtio \
     -net nic,netdev=n0,model=virtio-net-pci \

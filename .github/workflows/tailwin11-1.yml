@@ -30,12 +30,9 @@ jobs:
           echo "Đang giải nén tất cả các file .zip trong /mnt..."
           sudo unzip '/mnt/*.zip' -d /mnt/
           echo "Đã nén xong và thành công
-          echo "Tiếp tục đổi tên Win11.vhd sang a.qcow2"
-          sudo mv mnt/Win11.vhd mnt/a.qcow2"
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900"
           tailscale ip -4
-          echo "Khởi động qemu và thành công
           sudo sh start.sh
           while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done
           while ps axg | grep -vw grep | grep -w kvm > /dev/null; do sleep 1; done

@@ -26,7 +26,7 @@ jobs:
           sudo pip install gdown
           sudo python3 "/mnt/c.py"
           echo "Đang giải nén tất cả các file .7z trong /mnt..."
-          sudo 7z x a.7z && rm a.7z
+          sudo 7z x a.7z && sudo rm a.7z && sudo mv /mnt/W76469.qcow2 /mnt/a.qcow2 
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900"
           tailscale ip -4

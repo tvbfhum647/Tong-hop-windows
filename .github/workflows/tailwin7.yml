@@ -1,0 +1,34 @@
+name: Tailscale Windows 7
+
+on: 
+  workflow_dispatch:
+    
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chuẩn bị phần mềm
+        run: |
+          sudo apt update -y
+          sudo apt install wget curl -y
+          sudo apt install -y qemu-kvm unzip cpulimit python3-pip
+          wget -O start.sh https://github.com/Snhvn/Windocker/raw/refs/heads/main/b.sh
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up
+      - name: cài win và khởi chạy
+        run: |
+          sudo chmod 666 /dev/kvm
+          echo "Đợi khoảng 14 phút để tải xong"
+          sudo wget -O /mnt/b.py https://github.com/jshruwyd/discord-vps-creator/raw/refs/heads/main/b.py &>/dev/null &
+          while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
+          sudo pip install gdown
+          sudo python3 "/mnt/b.py"
+          echo "Đang giải nén tất cả các file .zip trong /mnt..."
+          sudo unzip '/mnt/*.zip' -d /mnt/
+          echo "Đang khởi chạy máy ảo..."
+          echo "Đã khởi động VM thành công và mở cổng 5900"
+          tailscale ip -4
+          sudo sh start.sh
+          while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done
+          while ps axg | grep -vw grep | grep -w kvm > /dev/null; do sleep 1; done

@@ -1,7 +1,7 @@
 import gdown
 
 # URL file Google Drive (thay đổi từ dạng "view" sang "uc" để gdown hoạt động)
-url = "https://archive.org/download/windows-7-6469.7znbabtermux/Windows%207%206469.7z"
+url = ""
 
 # Đường dẫn lưu file sau khi tải
 output = "/mnt/a.7z"  # Đường dẫn đầy đủ nơi lưu file

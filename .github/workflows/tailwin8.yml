@@ -26,7 +26,7 @@ jobs:
           sudo pip install gdown
           sudo python3 "/mnt/win8.py"
           echo "Đang giải nén tất cả các file .7z trong /mnt..."
-          sudo 7z x mnt/a.7z && sudo rm -rf mnt/a.7z
+          sudo 7z x mnt/Windows 8 9200.7z && sudo rm -rf mnt/Windows 8 9200.7z
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900"
           tailscale ip -4

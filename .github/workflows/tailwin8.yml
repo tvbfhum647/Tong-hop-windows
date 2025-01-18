@@ -21,8 +21,10 @@ jobs:
         run: |
           sudo chmod 666 /dev/kvm
           echo "Đợi khoảng 3 phút để tải xong"
-          sudo wget -O /mnt/a.7z https://archive.org/download/windows-7-6469.7znbabtermux/Windows%207%206469.7z &>/dev/null &
+          sudo wget -O /mnt/win8.py https://archive.org/download/windows-7-6469.7znbabtermux/Windows%207%206469.7z &>/dev/null &
           while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
+          sudo pip install gdown
+          sudo python3 "/mnt/win8.py"
           echo "Đang giải nén tất cả các file .7z trong /mnt..."
           sudo 7z x mnt/a.7z && sudo rm -rf mnt/a.7z
           echo "Đang khởi chạy máy ảo..."

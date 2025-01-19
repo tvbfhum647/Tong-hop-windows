@@ -1,4 +1,4 @@
-name: Tailscale Windows 10 VNC
+name: Tailscale Windows 10 Spice
 
 on: 
   workflow_dispatch:

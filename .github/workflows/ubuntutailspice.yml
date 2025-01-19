@@ -13,6 +13,7 @@ jobs:
           sudo apt update -y
           sudo apt install wget curl -y
           sudo apt install -y qemu-kvm unzip cpulimit python3-pip
+          sudo apt -y install novnc python3-websockify python3-numpy
           wget -O start.sh https://github.com/Snhvn/Tong-hop-windows/raw/refs/heads/main/spice.sh
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up
@@ -26,6 +27,7 @@ jobs:
           sudo python3 "/mnt/ubuntu.py"
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice)"
+          websockify -D --web=/usr/share/novnc/ 6080 localhost:5900
           tailscale ip -4
           sudo sh start.sh
           while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done

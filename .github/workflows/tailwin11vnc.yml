@@ -1,4 +1,4 @@
-name: Tailscale Windows 11 VNC
+name: Tailscale Windows 11 Spice
 
 on: 
   workflow_dispatch:

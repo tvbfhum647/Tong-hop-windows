@@ -24,10 +24,8 @@ jobs:
           while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
           sudo pip install gdown
           sudo python3 "/mnt/ubuntu.py"
-          echo "Đang giải nén tất cả các file .zip trong /mnt..."
-          sudo unzip '/mnt/*.zip' -d /mnt/
           echo "Đang khởi chạy máy ảo..."
-          echo "Đã khởi động VM thành công và mở cổng 5900"
+          echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice)"
           tailscale ip -4
           sudo sh start.sh
           while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done

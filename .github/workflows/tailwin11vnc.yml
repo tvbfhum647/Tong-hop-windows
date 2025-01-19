@@ -13,7 +13,7 @@ jobs:
           sudo apt update -y
           sudo apt install wget curl -y
           sudo apt install -y qemu-kvm unzip cpulimit python3-pip
-          wget -O start.sh https://github.com/Snhvn/Windocker/raw/refs/heads/main/b.sh
+          wget -O start.sh 
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up
       - name: cài win và khởi chạy

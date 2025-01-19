@@ -15,6 +15,7 @@ jobs:
         run: |
           sudo apt update -y
           sudo apt install qemu-kvm cpulimit wget -y
+          sudo apt-get install virt-manager
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up
       - name: cài win và khởi chạy

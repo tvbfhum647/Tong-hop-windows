@@ -1,4 +1,4 @@
-name: Tailscale Windows 11 23H2
+name: Tailscale Windows 11 VNC
 
 on: 
   workflow_dispatch:

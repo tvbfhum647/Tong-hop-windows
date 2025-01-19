@@ -26,7 +26,7 @@ jobs:
           sudo pip install gdown
           sudo python3 "/mnt/ubuntu.py"
           echo "Đang khởi chạy máy ảo..."
-          echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice)"
+          echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice),Ko thể kết nối được ssh"
           websockify -D --web=/usr/share/novnc/ 6080 localhost:5900
           echo " User: runner | Password: 1"
           tailscale ip -4

@@ -28,6 +28,7 @@ jobs:
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice)"
           websockify -D --web=/usr/share/novnc/ 6080 localhost:5900
+          echo " User: runner | Password: 1"
           tailscale ip -4
           sudo sh start.sh
           while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done

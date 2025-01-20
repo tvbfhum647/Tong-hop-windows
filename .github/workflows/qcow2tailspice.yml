@@ -1,0 +1,37 @@
+name: Tailscale Qcow2 Spice 
+
+on: 
+  workflow_dispatch:
+        inputs:
+         qcow2:
+          description: 'Dán link qcow2 vào nếu bạn ko có file thì xem phần readme của Res này có để link'
+          required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chuẩn bị phần mềm
+        run: |
+          sudo apt update -y
+          sudo apt install wget curl -y
+          sudo apt install -y qemu-kvm unzip cpulimit python3-pip
+          sudo apt -y install novnc python3-websockify python3-numpy
+          wget -O start.sh https://github.com/Snhvn/Tong-hop-windows/raw/refs/heads/main/spice.sh
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up
+      - name: cài win và khởi chạy
+        run: |
+          sudo chmod 666 /dev/kvm
+          echo "Đợi khoảng 14 phút để tải xong"
+          echo 'import gdown | url = "${{github.event.inputs.qcow2}}" | output = "/mnt/a.qcow2" | gdown.download(url, output, quiet=False) | print(f"File đã được tải về và lưu tại: {output}")' >qcow2.py
+          echo "Đợi khoảng 1-10 phút hoặc có thể tải nhanh hơn tùy theo tốc độ mạng của github"
+          sudo pip install gdown
+          sudo python3 "/mnt/qcow2.py"
+          echo "Đang khởi chạy máy ảo..."
+          echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice),Ko thể kết nối được ssh"
+          websockify -D --web=/usr/share/novnc/ 6080 localhost:5900
+          echo "K cần user và password cứ vào dùng lệnh bth"
+          tailscale ip -4
+          sudo sh start.sh
+          while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done
+          while ps axg | grep -vw grep | grep -w kvm > /dev/null; do sleep 1; done

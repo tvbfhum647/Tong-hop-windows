@@ -3,8 +3,8 @@ name: Tailscale Qcow2 Spice
 on: 
   workflow_dispatch:
         inputs:
-         qcow2:
-          description: 'Dán link qcow2 vào nếu bạn ko có file thì xem phần readme của Res này có để link'
+         id:
+          description: 'Nhập id của file vào'
           required: true
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
         run: |
           sudo apt update -y
           sudo apt install wget curl -y
-          sudo apt install -y qemu-kvm unzip cpulimit
+          sudo apt install -y qemu-kvm unzip cpulimit python3-pip
           sudo apt -y install novnc python3-websockify python3-numpy
           wget -O start.sh https://github.com/Snhvn/Tong-hop-windows/raw/refs/heads/main/spice.sh
           curl -fsSL https://tailscale.com/install.sh | sh
@@ -23,8 +23,10 @@ jobs:
         run: |
           sudo chmod 666 /dev/kvm
           echo "Đợi khoảng 1-60 phút hoặc có thể tải nhanh hơn tùy theo tốc độ mạng của github"
-          sudo wget -O /mnt/a.qcow2 "${{github.event.inputs.qcow2}}" &>/dev/null &
-          while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done  
+          sudo wget -O /mnt/${{github.event.inputs.id}}.py "https://github.com/Snhvn/Tong-hop-windows/raw/refs/heads/main/${{github.event.inputs.id}}.py" &>/dev/null &
+          while ps axg | grep -vw grep | grep -w wget > /dev/null; do sleep 1; done
+          sudo pip install gdown
+          sudo python3 "/mnt/${{github.event.inputs.id}}.py"
           echo "Đang khởi chạy máy ảo..."
           echo "Đã khởi động VM thành công và mở cổng 5900(vnc),5924(spice),Ko thể kết nối được ssh"
           websockify -D --web=/usr/share/novnc/ 6080 localhost:5900

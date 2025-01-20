@@ -28,7 +28,7 @@ https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIs
 ```
 + User : runner | Password : 1
 _______________________________
-- Id: 1124h2 Windows 11 24H2:
+- Id: 1124h2|Windows 11 24H2:
 ```
 https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJsaW51eHVzZXJzZmFrZS9XaW5kb3dzMTEyNEgyLzI0LjIvV2luMTEyNEgyL2QyOTQwOWVhLWFjY2MtMTFlZi05NGM4LTVhOGNhNzBiNzRhNSIsIm1vZGUiOiJyIiwiZmlsZW5hbWUiOiJXaW5kb3dzMTEyNEgyXzI0LjJfV2luMTEyNEgyX2FtZDY0LmJveCJ9.7DD39XJxF8PjIdhHcuEABTPiZbPgq_CEgVHrV9ka_eg
 ```

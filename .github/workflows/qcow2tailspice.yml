@@ -23,7 +23,7 @@ jobs:
         run: |
           sudo chmod 666 /dev/kvm
           echo "Đợi khoảng 14 phút để tải xong"
-          echo 'import gdown | url = "${{github.event.inputs.qcow2}}" | output = "/mnt/a.qcow2" | gdown.download(url, output, quiet=False) | print(f"File đã được tải về và lưu tại: {output}")' >/mnt/qcow2.py
+          sudo echo 'import gdown | url = "${{github.event.inputs.qcow2}}" | output = "/mnt/a.qcow2" | gdown.download(url, output, quiet=False) | print(f"File đã được tải về và lưu tại: {output}")' >/mnt/qcow2.py
           echo "Đợi khoảng 1-10 phút hoặc có thể tải nhanh hơn tùy theo tốc độ mạng của github"
           sudo pip install gdown
           sudo python3 "/mnt/qcow2.py"

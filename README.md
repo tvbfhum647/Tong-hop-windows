@@ -1,8 +1,10 @@
 # Tong-hop-Windows
 Tất cả các actions được SNIPA VN tái lại về github codespace T-r mèo gamer
 Đây là thần tối cao của tôi đấy là t-r mèo gamer(ubuntu2310fake) tôi tôn vinh nhất
+________________________________
 *Youtube : https://youtube.com/@snipavn205
 *Discord : https://dsc.gg/servertipacvn
+________________________________
 # Các File Qcow2 Từ https://netdisk.xmbillion.com/intl/pve:
 - CentOS-7.3.1611.x64.qcow2 :
 ```
@@ -19,13 +21,16 @@ https://3zfmbk-my.sharepoint.com/personal/xmbll_3zfmbk_onmicrosoft_com/_layouts/
 https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiIyMWZlYWNmYi0xMWY5LTRkMTEtOGM2OC0xMTQ5YmY1NmY2YzIiLCJtb2RlIjoiciIsImZpbGVuYW1lIjoid2luMTFtb2RyZHB3Zl8xLjBfcWVtdV9hbWQ2NC5ib3gifQ.WYMn2onERXAiIk9BHyZtMJZZirZS6H9tzJAC5Sj8KIA
 ```
 + User : runneradmin | Password : 1
+_______________________________
 - Id: 22|Ubuntu 22.04 LTS:
 ```
 https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI1ZGQ1NmM1OC04ZDQ4LTQ0NzgtOWE1Zi0wYjNmYzgyYzRiNTkiLCJtb2RlIjoiciIsImZpbGVuYW1lIjoidWJ1bnR1c2VydmVyMjJfMC4wX3FlbXVfYW1kNjQuYm94In0.tYprxQPqKwTPaqlfna0u7rIlpD3WYbK03haABvT3KQk
 ```
 + User : runner | Password : 1
+_______________________________
 - Id: 1124h2 Windows 11 24H2:
 ```
 https://api.cloud.hashicorp.com/vagrant-archivist/v1/object/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJsaW51eHVzZXJzZmFrZS9XaW5kb3dzMTEyNEgyLzI0LjIvV2luMTEyNEgyL2QyOTQwOWVhLWFjY2MtMTFlZi05NGM4LTVhOGNhNzBiNzRhNSIsIm1vZGUiOiJyIiwiZmlsZW5hbWUiOiJXaW5kb3dzMTEyNEgyXzI0LjJfV2luMTEyNEgyX2FtZDY0LmJveCJ9.7DD39XJxF8PjIdhHcuEABTPiZbPgq_CEgVHrV9ka_eg
 ```
 + User : runneradmin | Password : 1
+_______________________________

@@ -5,6 +5,7 @@ ________________________________
 *Youtube : https://youtube.com/@snipavn205
 *Discord : https://dsc.gg/servertipacvn
 ________________________________
+!! Lưu Ý Tất Cả Các File trong đây đều dùng cho github action các file ngoài k dùng đc
 # Các File Qcow2 Từ https://netdisk.xmbillion.com/intl/pve:
 - CentOS-7.3.1611.x64.qcow2 :
 ```

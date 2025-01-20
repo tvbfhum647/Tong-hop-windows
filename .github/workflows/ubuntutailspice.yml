@@ -31,6 +31,5 @@ jobs:
           echo " User: runner | Password: 1"
           tailscale ip -4
           sudo sh start.sh
-          sudo sh start.sh
           while ps axg | grep -vw grep | grep -w qemu-system-x86_64 > /dev/null; do sleep 1; done
           while ps axg | grep -vw grep | grep -w kvm > /dev/null; do sleep 1; done

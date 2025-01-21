@@ -1,4 +1,4 @@
-name: Tailscale Qcow2 Windows Spice 
+name: Tailscale Qcow2 Linuxs Spice 
 
 on: 
   workflow_dispatch:

@@ -31,7 +31,7 @@ _________________________________
 - Windows2019.qcow2 | Id: w2019
 _________________________________
 - Windows2022.qcow2 | Id: w2022
-# File qcow2 của t-r mèo gamer(Github: ubuntu2310fake), các file này tải lâu lắm cx đợi khoảng 15 phút:
+# File qcow2 của t-r mèo gamer(Github: ubuntu2310fake), các file này tải lâu lắm cx đợi khoảng 10-15 phút:
 *Windows
 - Windows 11 23H2 | Id: w1123h2
 + User : runneradmin | Password : 1

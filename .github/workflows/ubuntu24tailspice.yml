@@ -1,4 +1,4 @@
-name: Tailscale Ubuntu 20.4 Spice 
+name: Tailscale Ubuntu 24.4 Spice 
 
 on: 
   workflow_dispatch:

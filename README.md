@@ -30,7 +30,7 @@ _________________________________
 - Windows 11 23H2 | Id: w1123h2
 + User : runneradmin | Password : 1
 _______________________________
-- Ubuntu 22.04 LTS | Id: ub22
+- Ubuntu 22.04 LTS | Id: ub24
 + User : runner | Password : 1
 _______________________________
 - Windows 11 24H2 | Id: w1124h2

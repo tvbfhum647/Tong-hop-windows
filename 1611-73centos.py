@@ -4,7 +4,7 @@ import gdown
 url = ""
 
 # Đường dẫn lưu file sau khi tải
-output = "/mnt/a.7z"  # Đường dẫn đầy đủ nơi lưu file
+output = "/mnt/a.qcow2"  # Đường dẫn đầy đủ nơi lưu file
 
 # Tải file
 gdown.download(url, output, quiet=False)

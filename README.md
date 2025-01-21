@@ -7,6 +7,8 @@ ________________________________
 ________________________________
 !! Lưu Ý Tất Cả Các File trong đây đều dùng cho github action các file ngoài k dùng đc
 !! Lưu Ý các file thuộc hệ điều hành linux phải sử dụng action khác
+- Actions Dành cho hệ điều hành Windows: https://github.com/Snhvn/Tong-hop-windows/actions/workflows/qcow2tailspice.yml
+- Actions Dành cho hệ điều hành Linux: chưa có
 # Các File Qcow2 Từ https://netdisk.xmbillion.com/intl/pve:
 *Linux
 - CentOS-7.3.1611.x64.qcow2 | Id: 1611-73centos

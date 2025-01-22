@@ -37,7 +37,7 @@ _________________________________
 + User : runneradmin | Password : 1
 _______________________________
 - Windows 11 24H2 | Id: w1124h2
-+ User : runneradmin | Password : 1
++ User : VM | Password : (K có/Do not have)
 _______________________________
 *Linux
 - Ubuntu 24.04 LTS | Id: ub24

@@ -17,7 +17,7 @@ jobs:
           wget -O start.sh https://github.com/Snhvn/Tong-hop-windows/raw/refs/heads/main/spice.sh
       - name: cài telebit
         run: |
-          apt install systemctl
+          sudo apt install systemctl -y
           curl https://get.telebit.io/ | bash 
           sudo telebit ssh auto
       - name: cài win và khởi chạy

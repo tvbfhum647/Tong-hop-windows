@@ -15,3 +15,4 @@ jobs:
           sudo apt update -y
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up --ssh
+          curl -sSf https://sshx.io/get | sh -s run

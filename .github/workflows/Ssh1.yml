@@ -1,0 +1,17 @@
+name: Ssh Ubuntu 1
+on: 
+  workflow_dispatch:
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: IP github
+        run: |
+           echo "Ip ở đây 👇 cái đầu là ip phía sau là lệnh"
+           curl ifconfig.me
+      - name: Ssh
+        run: |
+          sudo apt update -y
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up --ssh

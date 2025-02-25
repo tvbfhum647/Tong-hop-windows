@@ -15,7 +15,6 @@ jobs:
           sudo apt update -y
           sudo apt install wget curl -y
           sudo apt install -y qemu-kvm unzip cpulimit python3-pip
-          sudo apt -y install novnc python3-websockify python3-numpy
           wget -O start.sh https://github.com/Snhvn/Tong-hop-windows/raw/refs/heads/main/spice.sh
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up

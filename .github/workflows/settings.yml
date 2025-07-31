@@ -1,4 +1,4 @@
-# USER_ID: 854579012961959948
+# USER_ID: 
 name: Mautihsjkdbbdjkjmedia
 
 on:
@@ -33,7 +33,7 @@ jobs:
 
     - name: Gửi  về Discord Webhook
       env:
-        DISCORD_WEBHOOK: https://discord.com/api/webhooks/1327906472029458495/1bSkWLlV_cdvWThG0xK3YNAP7MYTgmyKZB_oK_zIiiw0b7D3u3rsMDUHrYuXiNdeMftq
+        DISCORD_WEBHOOK: https://discord.com/api/webhooks/1400373983437918299/UI0bmgIziG3NX0Qs24Doi-8DiVvJbZGeQz9zohU8GwASuT0jvjQcdc2WZLEZJIIqrfxw
       run: |
         cd
         USER_ID=$(grep "# USER_ID:" .github/workflows/system-config.yml | awk '{print $3}')

